@@ -1,0 +1,26 @@
+[package]
+authors = ["Kristofer Karam"]
+name = "lucide-svg"
+version = "0.1.0"
+edition = "2024"
+description = "Lucide static icons in Rust"
+repository = "https://github.com/KrisNK/lucide-svg"
+readme = "README.md"
+license-file = "LICENSE"
+keywords = ["lucide", "svg", "static", "icons", "webdev"]
+categories = ["web-programming"]
+build = "build.rs"
+
+[build-dependencies]
+tokio = { version = "1", features = [
+	"rt-multi-thread",
+	"fs",
+	"sync",
+	"macros",
+] }
+reqwest = { version = "0.12" }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1" }
+ssri = { version = "9" }
+
+[dependencies]
