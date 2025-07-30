@@ -1,8 +1,10 @@
 # Lucide SVG
-[Lucide](https://lucide.dev) static icons in Rust.
 
 ![Crates.io Downloads (latest version)](https://img.shields.io/crates/dv/lucide-svg)
 ![Crates.io License](https://img.shields.io/crates/l/lucide-svg)
+
+[Lucide](https://lucide.dev) static icons in Rust.
+
 
 ## Usage
 ```rust
