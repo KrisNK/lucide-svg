@@ -121,20 +121,33 @@ fn gen_ident(path: &str) -> String {
         .unwrap()
         .strip_suffix(".svg")
         .unwrap()
-        .chars();
+        .chars()
+        .peekable();
 
     let mut ident = String::new();
     let mut at_hyphen = false;
+    let mut at_number = false;
 
-    for c in path {
+    while let Some(c) = path.next() {
         match c {
             _ if ident.is_empty() => ident.push(c.to_ascii_uppercase()),
-            '-' => at_hyphen = true,
+            '-' => {
+                if let Some(nc) = path.peek() {
+                    if nc.is_ascii_digit() && at_number {
+                        ident.push('_');
+                    }
+                }
+                at_hyphen = true;
+            }
             _ if at_hyphen => {
                 at_hyphen = false;
+                at_number = c.is_ascii_digit();
                 ident.push(c.to_ascii_uppercase());
             }
-            _ => ident.push(c),
+            _ => {
+                at_number = c.is_ascii_digit();
+                ident.push(c);
+            }
         }
     }
 

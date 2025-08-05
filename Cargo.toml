@@ -1,12 +1,12 @@
 [package]
 authors = ["Kristofer Karam"]
 name = "lucide-svg"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Lucide static icons in Rust"
 repository = "https://github.com/KrisNK/lucide-svg"
 readme = "README.md"
-license-file = "LICENSE"
+license = "MIT"
 keywords = ["lucide", "svg", "static", "icons", "webdev"]
 categories = ["web-programming"]
 build = "build.rs"

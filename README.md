@@ -1,10 +1,14 @@
 # Lucide SVG
 
-![Crates.io Downloads (latest version)](https://img.shields.io/crates/dv/lucide-svg)
+![Crates.io Version](https://img.shields.io/crates/v/lucide-svg)
 ![Crates.io License](https://img.shields.io/crates/l/lucide-svg)
 
 [Lucide](https://lucide.dev) static icons in Rust.
 
+## How it works
+When you build your project with `lucide-svg`, a build script runs. It downloads all SVG icons, from the latest [lucid-static unpkg CDN](https://app.unpkg.com/lucide-static@latest), and generates a struct for each icon.
+
+Furthermore, each struct implements `Debug`, `Display`, `Clone`, `Copy`, and, the crate defined trait, `LucideIcon`.
 
 ## Usage
 ```rust
